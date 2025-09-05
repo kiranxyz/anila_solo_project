@@ -59,34 +59,45 @@ const consonant = [
 ];
 
 const vowel = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+let translatedPhrase = "";
+let finalWord = "";
+phrase.forEach((word) => {
+  try {
+    const firstConsonantFound = consonant.find(
+      (element) => element === word[0]
+    );
+    const secondConsonantFound = consonant.find(
+      (element) => element === word[1]
+    );
+    const firstVowelFound = vowel.find((element) => element === word[0]);
+    const secondVowelFound = vowel.find((element) => element === word[1]);
 
-let char = phrase[0];
-
-try {
-  const firstConsonantFound = consonant.find((element) => element === char[0]);
-  const secondConsonantFound = consonant.find((element) => element === char[1]);
-  const vowelFound = vowel.find((element) => element === char[0]);
-  if (firstConsonantFound != "" && firstConsonantFound != undefined) {
-    let secondLetter = phrase[0].slice(1);
-    let finalWord = secondLetter + firstConsonantFound + "ay";
-    console.log(finalWord);
-  } else if (
-    firstConsonantFound != "" &&
-    firstConsonantFound != undefined &&
-    secondConsonantFound != "" &&
-    secondConsonantFound != undefined
-  ) {
-    let thirdLetter = phrase[0].slice(3);
-    console.log(thirdLetter);
-    let finalWord =
-      thirdLetter + firstConsonantFound + secondConsonantFound + "ay";
-    console.log(finalWord);
-  } else if (vowelFound != "") {
-    let finalWord = phrase[0] + "way";
-    console.log(finalWord);
-  } else {
+    if (
+      firstConsonantFound != "" &&
+      firstConsonantFound != undefined &&
+      secondVowelFound != undefined &&
+      secondVowelFound != ""
+    ) {
+      let secondLetter = word.slice(1);
+      finalWord = secondLetter + firstConsonantFound + "ay";
+    } else if (
+      firstConsonantFound != "" &&
+      firstConsonantFound != undefined &&
+      secondConsonantFound != "" &&
+      secondConsonantFound != undefined
+    ) {
+      let thirdLetter = word.slice(2);
+      finalWord =
+        thirdLetter + firstConsonantFound + secondConsonantFound + "ay";
+    } else if (firstVowelFound != "") {
+      finalWord = word + "way";
+    } else {
+      console.log("Please try entering the phrase again :(");
+    }
+  } catch {
     console.log("Please try entering the phrase again :(");
   }
-} catch {
-  console.log("Please try entering the phrase again :(");
-}
+
+  translatedPhrase += " " + finalWord;
+});
+console.log("Translated Phrase:" + translatedPhrase);

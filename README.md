@@ -19,5 +19,11 @@ output:hildCay
 node pigLatinTranslator.js Awesome
 output:Awesomeway
 
+node pigLatinTranslator.js Pig Latin is hard to speak
+output:igPay atinLay isway ardhay otay eakspay
+
 node pigLatinTranslator.js
+output:Translated Phrase:
+
+In case of error:
 output:Please try entering the phrase again :(
