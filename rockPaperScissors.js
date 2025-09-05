@@ -13,20 +13,6 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-/*if (playerMove === "" && computerMove === "") {
-  console.log("win");
-  return;
-} else if (playerMove === "" && computerMove === "") {
-  console.log("lose");
-  return;
-} else if (playerMove === "" && computerMove === "") {
-  console.log("draw");
-  return;
-} else {
-  console.log("Please enter a move: ");
-  return;
-}*/
-
 switch (playerMove[0] != null || "") {
   case (playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "rock") ==
     true:
