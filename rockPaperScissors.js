@@ -13,43 +13,37 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-switch (playerMove[0] != null || "") {
-  case (playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "rock") ==
-    true:
+switch (playerMove[0] != "" && computerMove[getRandomInt(3)] != "") {
+  case playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "rock":
     console.log("draw");
     break;
-  case (playerMove[0] === "rock" &&
-    computerMove[getRandomInt(3)] === "paper") == true:
+  case playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "paper":
     console.log("win");
     break;
-  case (playerMove[0] === "rock" &&
-    computerMove[getRandomInt(3)] === "scissors") == true:
+  case playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "scissors":
     console.log("win");
     break;
-  case (playerMove[0] === "paper" &&
-    computerMove[getRandomInt(3)] === "scissors") == true:
+  case playerMove[0] === "paper" &&
+    computerMove[getRandomInt(3)] === "scissors":
     console.log("lose");
     break;
-  case (playerMove[0] === "paper" &&
-    computerMove[getRandomInt(3)] === "rock") == true:
+  case playerMove[0] === "paper" && computerMove[getRandomInt(3)] === "rock":
     console.log("lose");
     break;
-  case (playerMove[0] === "paper" &&
-    computerMove[getRandomInt(3)] === "paper") == true:
+  case playerMove[0] === "paper" && computerMove[getRandomInt(3)] === "paper":
     console.log("draw");
     break;
-  case (playerMove[0] === "scissors" &&
-    computerMove[getRandomInt(3)] === "rock") == true:
+  case playerMove[0] === "scissors" && computerMove[getRandomInt(3)] === "rock":
     console.log("lose");
     break;
-  case (playerMove[0] === "scissors" &&
-    computerMove[getRandomInt(3)] === "paper") == true:
+  case playerMove[0] === "scissors" &&
+    computerMove[getRandomInt(3)] === "paper":
     console.log("win");
     break;
-  case (playerMove[0] === "scissors" &&
-    computerMove[getRandomInt(3)] === "scissors") == true:
+  case playerMove[0] === "scissors" &&
+    computerMove[getRandomInt(3)] === "scissors":
     console.log("draw");
     break;
   default:
-    console.log("Please enter your move: ");
+    console.log("Please enter your move again: ");
 }
