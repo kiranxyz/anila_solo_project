@@ -33,3 +33,6 @@ output:Please try entering the phrase again :(
 Challenge3:
 node caesarCipher.js hello world 3
 output:khoorzruog
+
+node caesarCipher.js hello world -3
+output:ebiiltloia
