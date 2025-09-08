@@ -10,7 +10,7 @@ Output the encrypted phrase to the console.
 Example: node caesarCipher.js "hello world" 3 # Output: khoor zruog*/
 
 const playerMove = process.argv.slice(2);
-const letters = [
+let letters = [
   "A",
   "B",
   "C",
@@ -49,13 +49,21 @@ for (let index = 0; index < i; index++) {
   }
 }
 const length = playerMove.length;
-for (let index = 0; index < playerMove[length - 1]; index++) {
-  letters.push(letters[index]);
+if (playerMove[length - 1] > 0) {
+  for (let index = 0; index < playerMove[length - 1]; index++) {
+    letters.push(letters[index]);
+  }
+  letters = letters.slice(playerMove[length - 1]);
+} else {
+  for (let index = 0; index > playerMove[length - 1]; index--) {
+    let removedElement = letters.pop();
+    letters.unshift(removedElement);
+  }
 }
-const cipherArray = letters.slice(playerMove[length - 1]);
 
 let cipheredText = "";
+
 for (let index = 0; index < indexArray.length; index++) {
-  cipheredText = cipheredText + cipherArray[indexArray[index]];
+  cipheredText = cipheredText + letters[indexArray[index]];
 }
 console.log(cipheredText.toLowerCase());
