@@ -9,7 +9,7 @@ A positive shift means shift to the right
 Output the encrypted phrase to the console.
 Example: node caesarCipher.js "hello world" 3 # Output: khoor zruog*/
 
-const playerMove = process.argv.slice(2);
+const args = process.argv.slice(2);
 let letters = [
   "A",
   "B",
@@ -38,32 +38,37 @@ let letters = [
   "Y",
   "Z",
 ];
-let indexArray = [];
-let i = playerMove.length - 2;
-for (let index = 0; index < i; index++) {
-  for (let index = 0; index < playerMove[index].length; index++) {
-    for (let index1 = 0; index1 < playerMove[index].length; index1++) {
-      let char = playerMove[index].charAt(index1).toUpperCase();
-      indexArray.push(letters.indexOf(char));
+
+if (args.length === 0) {
+  console.log(`❌ Please enter the text again:(`);
+} else {
+  let indexArray = [];
+  let i = args.length - 2;
+  for (let index = 0; index < i; index++) {
+    for (let index = 0; index < args[index].length; index++) {
+      for (let index1 = 0; index1 < args[index].length; index1++) {
+        let char = args[index].charAt(index1).toUpperCase();
+        indexArray.push(letters.indexOf(char));
+      }
     }
   }
-}
-const length = playerMove.length;
-if (playerMove[length - 1] > 0) {
-  for (let index = 0; index < playerMove[length - 1]; index++) {
-    letters.push(letters[index]);
+  const length = args.length;
+  if (args[length - 1] > 0) {
+    for (let index = 0; index < args[length - 1]; index++) {
+      letters.push(letters[index]);
+    }
+    letters = letters.slice(args[length - 1]);
+  } else {
+    for (let index = 0; index > args[length - 1]; index--) {
+      let removedElement = letters.pop();
+      letters.unshift(removedElement);
+    }
   }
-  letters = letters.slice(playerMove[length - 1]);
-} else {
-  for (let index = 0; index > playerMove[length - 1]; index--) {
-    let removedElement = letters.pop();
-    letters.unshift(removedElement);
+
+  let cipheredText = "";
+
+  for (let index = 0; index < indexArray.length; index++) {
+    cipheredText = cipheredText + letters[indexArray[index]];
   }
+  console.log(`🔐 Ciphered Text: ${cipheredText.toLowerCase()}`);
 }
-
-let cipheredText = "";
-
-for (let index = 0; index < indexArray.length; index++) {
-  cipheredText = cipheredText + letters[indexArray[index]];
-}
-console.log(cipheredText.toLowerCase());
