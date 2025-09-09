@@ -47,4 +47,5 @@ switch (playerMove[0] != null || "") {
     break;
   default:
     console.log("❌ Please enter your move: ");
+
 }
