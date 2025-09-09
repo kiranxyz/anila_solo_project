@@ -1,38 +1,42 @@
-# rock_paper_scissors
+**Fun Command-Line Challenges with Node.js 🚀**
 
-Challenge1:
-command to execute:
+**Challenge 1 – Rock Paper Scissors**
+Goal: Play rock-paper-scissors against the computer.
+
+Run command:
+
 node rockPaperScissors.js rock
-output: depends on computer move
 
-# pig_latin_transaltor
+Sample outputs:
 
-Challenge2:
-command to execute:
+You: rock | Computer: scissors → You win! 🎉
+You: rock | Computer: paper → You lose 😢
+
+**Challenge 2 – Pig Latin Translator**
+Goal: Translate words/phrases into Pig Latin.
+
+Run commands & outputs:
 
 node pigLatinTranslator.js Happy
-output:appyHay
-
-node pigLatinTranslator.js Child
-output:hildCay
-
-node pigLatinTranslator.js Awesome
-output:Awesomeway
+→ 📜 Translated Phrase: appyHay
 
 node pigLatinTranslator.js Pig Latin is hard to speak
-output:igPay atinLay isway ardhay otay eakspay
+→ 📜 Translated Phrase: igPay atinLay isway ardhay otay eakspay
+
+Error case:
 
 node pigLatinTranslator.js
-output:Translated Phrase:
+→ ❌ Please try entering the phrase again :(
 
-In case of error:
-output:Please try entering the phrase again :(
+**Challenge 3 – Caesar Cipher**
+Goal: Encrypt or decrypt a phrase using Caesar Cipher shift.
 
-# caesar_cipher_game
+Run commands & outputs:
 
-Challenge3:
 node caesarCipher.js hello world 3
-output:khoorzruog
+→ 🔐 Ciphered Text: khoorzruog
 
 node caesarCipher.js hello world -3
-output:ebiiltloia
+→ 🔐 Ciphered Text: ebiiltloia
+
+Logic: Each letter shifts by a number (+3 forward, -3 backward).
