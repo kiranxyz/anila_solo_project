@@ -13,37 +13,39 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-switch (playerMove[0] != "" && computerMove[getRandomInt(3)] != "") {
-  case playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "rock":
-    console.log("draw");
+const computerMve = computerMove[getRandomInt(3)];
+console.log(`🧑 You chose: ${playerMove}`);
+console.log(`💻 Computer chose: ${computerMve}`);
+
+switch (playerMove[0] != null || "") {
+  case (playerMove[0] === "rock" && computerMve === "rock") == true:
+    console.log("🤝It's a draw");
     break;
-  case playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "paper":
-    console.log("win");
+  case (playerMove[0] === "rock" && computerMve === "paper") == true:
+    console.log("🎉You win!");
     break;
-  case playerMove[0] === "rock" && computerMove[getRandomInt(3)] === "scissors":
-    console.log("win");
+  case (playerMove[0] === "rock" && computerMve === "scissors") == true:
+    console.log("🎉You win!");
     break;
-  case playerMove[0] === "paper" &&
-    computerMove[getRandomInt(3)] === "scissors":
-    console.log("lose");
+  case (playerMove[0] === "paper" && computerMve === "scissors") == true:
+    console.log("😢You lose!");
     break;
-  case playerMove[0] === "paper" && computerMove[getRandomInt(3)] === "rock":
-    console.log("lose");
+  case (playerMove[0] === "paper" && computerMve === "rock") == true:
+    console.log("😢You lose!");
     break;
-  case playerMove[0] === "paper" && computerMove[getRandomInt(3)] === "paper":
-    console.log("draw");
+  case (playerMove[0] === "paper" && computerMve === "paper") == true:
+    console.log("🤝It's a draw");
     break;
-  case playerMove[0] === "scissors" && computerMove[getRandomInt(3)] === "rock":
-    console.log("lose");
+  case (playerMove[0] === "scissors" && computerMve === "rock") == true:
+    console.log("😢You lose!");
     break;
-  case playerMove[0] === "scissors" &&
-    computerMove[getRandomInt(3)] === "paper":
-    console.log("win");
+  case (playerMove[0] === "scissors" && computerMve === "paper") == true:
+    console.log("🎉You win!");
     break;
-  case playerMove[0] === "scissors" &&
-    computerMove[getRandomInt(3)] === "scissors":
-    console.log("draw");
+  case (playerMove[0] === "scissors" && computerMve === "scissors") == true:
+    console.log("🤝It's a draw");
     break;
   default:
-    console.log("Please enter your move again: ");
+    console.log("❌ Please enter your move: ");
+
 }

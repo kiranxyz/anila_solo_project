@@ -92,12 +92,12 @@ phrase.forEach((word) => {
     } else if (firstVowelFound != "") {
       finalWord = word + "way";
     } else {
-      console.log("Please try entering the phrase again :(");
+      console.log("❌ Please try entering the phrase again :(");
     }
   } catch {
-    console.log("Please try entering the phrase again :(");
+    console.log("❌ Please try entering the phrase again :(");
   }
 
   translatedPhrase += " " + finalWord;
 });
-console.log("Translated Phrase:" + translatedPhrase);
+console.log("📜 Translated Phrase:" + translatedPhrase);
